@@ -1,7 +1,18 @@
-import '../styles/globals.css'
+import { ColorModeProvider, CSSReset, ThemeProvider } from '@chakra-ui/core';
+import DarkModeButton from '../components/darkModeButton';
+import customTheme from '../theme';
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+function App({ Component, pageProps, children }) {
+  return (
+    <ThemeProvider theme={customTheme}>
+      <CSSReset />
+      <ColorModeProvider>
+        {children}
+        <DarkModeButton />
+        <Component {...pageProps} />
+      </ColorModeProvider>
+    </ThemeProvider>
+  );
 }
 
-export default MyApp
+export default App;
