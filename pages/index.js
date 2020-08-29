@@ -1,5 +1,6 @@
-import { Box, Flex, Heading, Image, Link, Text } from '@chakra-ui/core';
+import { Box, Flex, Heading, Link, Text } from '@chakra-ui/core';
 import Head from 'next/head';
+import PortfolioItem from '../components/portfolioItem';
 
 export default function Home() {
   return (
@@ -9,9 +10,8 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <style>@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');</style>
-
       <Flex justifyContent='center' flexDirection='column' height='80vh' letterSpacing='-.16px'>
-        <Box maxWidth='1230px' px='30px' mx='auto' w='100%'>
+        <Box maxWidth='1260px' px='30px' mx='auto' w='100%'>
           <Heading as='h1' fontWeight='700' fontSize='28px' color='darkblue' lineHeight='1.2'>
             Pierre Thiollent
           </Heading>
@@ -71,26 +71,23 @@ export default function Home() {
           </Box>
         </Box>
       </Flex>
-      <Flex justifyContent='center' flexDirection='column'>
-        <Box maxWidth='1230px' px='30px' mx='auto' w='100%'>
-          <Heading as='h3' color='darkblue' fontSize='25px' fontWeight='700'>
-            Portfolio
-          </Heading>
-          <Text color='customGrey' fontWeight='300' lineHeight='1.625'>
-            My latest projects
-          </Text>
+      <Box>
+        <Box maxWidth='1260px' px='30px' mx='auto' w='100%'>
+          <Box mb='50px'>
+            <Heading as='h3' color='darkblue' fontSize='25px' fontWeight='700'>
+              Portfolio
+            </Heading>
+            <Text color='customGrey' fontWeight='300' lineHeight='1.625'>
+              My latest projects
+            </Text>
+          </Box>
+          <Flex justifyContent='space-between' alignItems='center' flexWrap='wrap'>
+            <PortfolioItem />
+            <PortfolioItem />
+            <PortfolioItem />
+          </Flex>
         </Box>
-      </Flex>
-      <footer>
-        <Flex justifyContent='center' alignItems='center' py='20px'>
-          <Text color='darkblue'>
-            Developped by Pierre Thiollent with ❤️ and
-            <Link href='https://nextjs.org/' isExternal title='Next.js' ml='2px'>
-              <Image src='/favicon.ico' alt='Vercel' maxW='20px' display='inline-block' verticalAlign='text-top' />
-            </Link>
-          </Text>
-        </Flex>
-      </footer>
+      </Box>
     </>
   );
 }
