@@ -10,12 +10,12 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <style>@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');</style>
-      <Flex justifyContent='center' flexDirection='column' height='80vh' letterSpacing='-.16px'>
+      <Flex justifyContent='center' flexDirection='column' height='80vh'>
         <Box maxWidth='1260px' px='30px' mx='auto' w='100%'>
-          <Heading as='h1' fontWeight='700' fontSize='28px' color='darkblue' lineHeight='1.2'>
+          <Heading as='h1' fontWeight='700' fontSize='28px' color='darkblue'>
             Pierre Thiollent
           </Heading>
-          <Heading as='h2' fontSize='16px' fontWeight='300' color='customGrey' lineHeight='1.625'>
+          <Heading as='h2' fontSize='16px' fontWeight='300' color='customGrey' lineHeight='1.8'>
             💻 Web Developer, UX/UI enthusiast
           </Heading>
           <Box mt='25px'>
@@ -71,17 +71,30 @@ export default function Home() {
           </Box>
         </Box>
       </Flex>
-      <Box>
+      <Box mb='80px'>
         <Box maxWidth='1260px' px='30px' mx='auto' w='100%'>
           <Box mb='50px'>
             <Heading as='h3' color='darkblue' fontSize='25px' fontWeight='700'>
               Portfolio
             </Heading>
-            <Text color='customGrey' fontWeight='300' lineHeight='1.625'>
+            <Text color='customGrey' fontWeight='300' lineHeight='1.8'>
               My latest projects
             </Text>
           </Box>
-          <Flex justifyContent='space-between' alignItems='center' flexWrap='wrap'>
+          <Flex justifyContent={['center', 'space-around', 'space-around', 'space-between']} alignItems='center' flexWrap='wrap'>
+            <PortfolioItem
+              image='todui.jpg'
+              projectName='Todui'
+              projectDescription='Task and project manager. Still in development.'
+              link='https://todui.pierre-thiollent.fr'
+            />
+            <PortfolioItem
+              image='frontendmentor-challenge.jpg'
+              projectName='REST Countries API'
+              projectDescription='Frontend challenge : integration and API calls.'
+              link='https://frontend-mentor-challenge-react-js.vercel.app/'
+            />
+            <PortfolioItem />
             <PortfolioItem />
             <PortfolioItem />
             <PortfolioItem />
