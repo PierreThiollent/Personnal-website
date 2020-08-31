@@ -2,10 +2,10 @@ import { Button, Icon, useColorMode } from '@chakra-ui/core';
 
 const DarkModeButton = () => {
   const { colorMode, toggleColorMode } = useColorMode();
-  console.log(colorMode);
   return (
     <Button
       position='fixed'
+      disabled
       top='30px'
       right='30px'
       onClick={toggleColorMode}
