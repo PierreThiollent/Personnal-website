@@ -1,65 +1,120 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import { Box, Flex, Heading, Link, Text } from '@chakra-ui/core';
+import Head from 'next/head';
+import PortfolioItem from '../components/portfolioItem';
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Pierre Thiollent - Web Developer</title>
+        <link rel='icon' href='/favicon.ico' />
       </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
+      <Flex justifyContent='center' flexDirection='column' height='80vh'>
+        <Box maxWidth='1260px' px='30px' mx='auto' w='100%'>
+          <Heading as='h1' fontWeight='700' fontSize='28px' color='darkblue'>
+            Pierre Thiollent
+          </Heading>
+          <Heading as='h2' fontSize='16px' fontWeight='300' color='customGrey' lineHeight='1.8'>
+            💻 Web Developer, UX/UI enthusiast
+          </Heading>
+          <Box mt='25px'>
+            <Link
+              href='https://github.com/PierreThiollent'
+              isExternal
+              fontSize='14px'
+              color='#8B9CAC'
+              fontWeight='300'
+              mr='12px'
+              _hover={{ textDecoration: 'none', color: 'tomato' }}
+              _focus={{ outline: 'none' }}>
+              GitHub
+            </Link>
+            <Link
+              href='https://twitter.com/Pierre_t76'
+              isExternal
+              fontSize='14px'
+              color='#8B9CAC'
+              fontWeight='300'
+              mr='12px'
+              _hover={{ textDecoration: 'none', color: 'tomato' }}
+              _focus={{ outline: 'none' }}>
+              Twitter
+            </Link>
+            <Link
+              href='https://www.linkedin.com/in/pierre-thiollent/'
+              isExternal
+              fontSize='14px'
+              color='#8B9CAC'
+              fontWeight='300'
+              mr='12px'
+              _hover={{ textDecoration: 'none', color: 'tomato' }}
+              _focus={{ outline: 'none' }}>
+              Linkedin
+            </Link>
+            <Link
+              href='https://www.instagram.com/pierre_thiollent/'
+              isExternal
+              fontSize='14px'
+              color='#8B9CAC'
+              fontWeight='300'
+              _hover={{ textDecoration: 'none', color: 'tomato' }}
+              _focus={{ outline: 'none' }}>
+              Instagram
+            </Link>
+          </Box>
+          <Box mt='50px' maxW='700px'>
+            <Text color='customGrey' fontWeight='300'>
+              Hi 👋🏻, I'm Pierre Thiollent, I live in Rouen and I'm a Web and Mobile Developer. I code mostly in Javascript, React and React Native. I
+              practice PHP and Symfony too. Check my work below ! ⬇️
+            </Text>
+          </Box>
+        </Box>
+      </Flex>
+      <Box mb='120px'>
+        <Box maxWidth='1260px' px='30px' mx='auto' w='100%'>
+          <Box mb='50px'>
+            <Heading as='h3' color='darkblue' fontSize='25px' fontWeight='700'>
+              Portfolio
+            </Heading>
+            <Text color='customGrey' fontWeight='300' lineHeight='1.8'>
+              My latest projects
+            </Text>
+          </Box>
+          <Flex justifyContent={['center', 'space-around', 'space-around', 'space-between']} alignItems='baseline' flexWrap='wrap'>
+            <PortfolioItem
+              image='todui.jpg'
+              projectName='Todui'
+              projectDescription='Task and project manager. Still in development.'
+              link='https://todui.pierre-thiollent.fr'
+              tags={['Next.js', 'MongoDB']}
+            />
+            <PortfolioItem
+              image='frontendmentor-challenge.jpg'
+              projectName='REST Countries API'
+              projectDescription='Frontend challenge : integration and API calls.'
+              link='https://frontend-mentor-challenge-react-js.vercel.app/'
+              tags={['React.js']}
+            />
+            <PortfolioItem
+              image='node-url-shortener.jpg'
+              projectName='URL shortener API'
+              projectDescription='FreeCodeCamp challenge : URL shortener API with Node.'
+              link='https://github.com/PierreThiollent/Url-shortener-api'
+              tags={['Node.js', 'Express', 'MongoDB']}
+            />
+            <PortfolioItem
+              image='mini-cms-symfony.jpg'
+              projectName='Blog Symfony'
+              projectDescription='Mini blog / CMS with Symfony.'
+              link='https://github.com/PierreThiollent/Mini-CMS-with-Symfony'
+              tags={['Symfony', 'MySQL']}
+            />
+            <PortfolioItem />
+            <PortfolioItem />
+          </Flex>
+          <Text mt='20px'>More projects coming soon...</Text>
+        </Box>
+      </Box>
+    </>
+  );
 }
