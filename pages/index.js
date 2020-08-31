@@ -109,8 +109,8 @@ export default function Home() {
               link='https://github.com/PierreThiollent/Mini-CMS-with-Symfony'
               tags={['Symfony', 'MySQL']}
             />
-            <PortfolioItem />
-            <PortfolioItem />
+            {/* <PortfolioItem /> */}
+            {/* <PortfolioItem /> */}
           </Flex>
           <Text mt='20px'>More projects coming soon...</Text>
         </Box>
