@@ -3,7 +3,7 @@ import { Box, Flex, Image, Link, Stack, Tag, Text } from '@chakra-ui/core';
 const PortfolioItem = ({ image, projectName, projectDescription, link, tags }) => (
   <Flex flex='0 1 370px' mb='40px' flexDirection='column'>
     <Link _hover={{ textDecoration: 'none' }} href={`${link}`} isExternal>
-      <Image src={`/${image}`} borderRadius='5px' maxHeight='370px' />
+      <Image src={`/${image}`} borderRadius='5px' maxHeight='370px' alt={`${projectName}`} />
       <Box mt='20px'>
         <Text fontSize='18px' color='darkblue'>
           {projectName}
