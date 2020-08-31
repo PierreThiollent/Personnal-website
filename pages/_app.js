@@ -7,18 +7,16 @@ import customTheme from '../theme';
 
 function App({ Component, pageProps, children }) {
   return (
-    <>
-      <ThemeProvider theme={customTheme}>
-        <CSSReset />
-        <ColorModeProvider>
-          {children}
-          <Component {...pageProps} />
-          <DarkModeButton />
-          <BackToTop />
-          <Footer />
-        </ColorModeProvider>
-      </ThemeProvider>
-    </>
+    <ThemeProvider theme={customTheme}>
+      <CSSReset />
+      <ColorModeProvider>
+        {children}
+        <Component {...pageProps} />
+        <DarkModeButton />
+        <BackToTop />
+        <Footer />
+      </ColorModeProvider>
+    </ThemeProvider>
   );
 }
 
