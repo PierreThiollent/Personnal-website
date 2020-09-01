@@ -4,7 +4,7 @@ const DarkModeButton = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
     <Button
-      position='fixed'
+      position='absolute'
       disabled
       top='30px'
       right='30px'

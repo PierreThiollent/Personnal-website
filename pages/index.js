@@ -80,7 +80,7 @@ export default function Home() {
               My latest projects
             </Text>
           </Box>
-          <Flex justifyContent={['center', 'space-around', 'space-around', 'space-between']} alignItems='baseline' flexWrap='wrap'>
+          <Flex justifyContent={['center', 'space-around', 'space-around', 'space-around']} alignItems='baseline' flexWrap='wrap'>
             <PortfolioItem
               image='todui.jpg'
               projectName='Todui'
@@ -94,6 +94,7 @@ export default function Home() {
               projectDescription='Frontend challenge : integration and API calls.'
               link='https://frontend-mentor-challenge-react-js.vercel.app/'
               tags={['React.js']}
+              gitUrl='https://github.com/PierreThiollent/Frontend-mentor-challenge-React-js'
             />
             <PortfolioItem
               image='node-url-shortener.jpg'
@@ -101,6 +102,15 @@ export default function Home() {
               projectDescription='FreeCodeCamp challenge : URL shortener API with Node.'
               link='https://github.com/PierreThiollent/Url-shortener-api'
               tags={['Node.js', 'Express', 'MongoDB']}
+              gitUrl='https://github.com/PierreThiollent/Url-shortener-api'
+            />
+            <PortfolioItem
+              image='placeholder.jpg'
+              projectName='Node and Express API'
+              projectDescription='OpenClassrooms course : my first API !'
+              link='https://github.com/PierreThiollent/Node-Express-MongoDB-API'
+              tags={['Node.js', 'Express', 'MongoDB']}
+              gitUrl='https://github.com/PierreThiollent/Node-Express-MongoDB-API'
             />
             <PortfolioItem
               image='mini-cms-symfony.jpg'
@@ -108,9 +118,16 @@ export default function Home() {
               projectDescription='Mini blog / CMS with Symfony.'
               link='https://github.com/PierreThiollent/Mini-CMS-with-Symfony'
               tags={['Symfony', 'MySQL']}
+              gitUrl='https://github.com/PierreThiollent/Mini-CMS-with-Symfony'
             />
-            <PortfolioItem />
-            <PortfolioItem />
+            <PortfolioItem
+              image='memory-game.jpg'
+              projectName='Memory game'
+              projectDescription='The memory game developed with React.js'
+              link='https://memory-game-tau.vercel.app/'
+              tags={['React.js']}
+              gitUrl='https://github.com/PierreThiollent/Memory-game'
+            />
           </Flex>
           <Text mt='20px'>More projects coming soon...</Text>
         </Box>
