@@ -1,7 +1,7 @@
 import { ColorModeProvider, CSSReset, ThemeProvider } from '@chakra-ui/core';
-import Test from '../components/backToTop';
 import DarkModeButton from '../components/darkModeButton';
 import Footer from '../components/footer';
+import Test from '../components/test';
 import '../style/global.css';
 import customTheme from '../theme';
 
