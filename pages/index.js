@@ -80,7 +80,7 @@ export default function Home() {
               My latest projects
             </Text>
           </Box>
-          <Flex justifyContent={['center', 'space-around', 'space-around', 'space-around']} alignItems='baseline' flexWrap='wrap'>
+          <Flex justifyContent={['center', 'space-around', 'space-around', 'space-around', 'space-between']} alignItems='baseline' flexWrap='wrap'>
             <PortfolioItem
               image='todui.jpg'
               projectName='Todui'
