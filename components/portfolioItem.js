@@ -1,6 +1,6 @@
-import { Box, Flex, Image, Link, Stack, Tag, Text } from '@chakra-ui/core';
+import { Box, Flex, Icon, Image, Link, Stack, Tag, Text } from '@chakra-ui/core';
 
-const PortfolioItem = ({ image, projectName, projectDescription, link, tags }) => (
+const PortfolioItem = ({ image, projectName, projectDescription, link, tags, gitUrl }) => (
   <Flex flex='0 1 370px' mb='40px' flexDirection='column'>
     <Link _hover={{ textDecoration: 'none' }} href={`${link}`} isExternal>
       <Image src={`/${image}`} borderRadius='5px' maxHeight='370px' alt={`${projectName}`} />
@@ -20,6 +20,11 @@ const PortfolioItem = ({ image, projectName, projectDescription, link, tags }) =
             {tag}
           </Tag>
         ))}
+      {gitUrl && (
+        <Link href={`${gitUrl}`} isExternal w='max-content' ml='auto' marginRight='10px'>
+          <Icon name='github' size='15px' color='darkblue' />
+        </Link>
+      )}
     </Stack>
   </Flex>
 );
