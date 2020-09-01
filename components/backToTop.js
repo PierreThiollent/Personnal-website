@@ -1,6 +1,6 @@
 import { Button, Icon } from '@chakra-ui/core';
 
-const Test = () => {
+const BackToTop = () => {
   const scrollTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -12,4 +12,4 @@ const Test = () => {
   );
 };
 
-export default Test;
+export default BackToTop;
