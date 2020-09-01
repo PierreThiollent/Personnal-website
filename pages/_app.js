@@ -1,5 +1,5 @@
 import { ColorModeProvider, CSSReset, ThemeProvider } from '@chakra-ui/core';
-import BackToTop from '../components/BacktoTop';
+import BackToTop from '../components/backToTop';
 import DarkModeButton from '../components/darkModeButton';
 import Footer from '../components/footer';
 import '../style/global.css';
