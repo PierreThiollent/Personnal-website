@@ -1,5 +1,5 @@
 import { ColorModeProvider, CSSReset, ThemeProvider } from '@chakra-ui/core';
-import BackToTop from '../components/backToTop';
+import Test from '../components/backToTop';
 import DarkModeButton from '../components/darkModeButton';
 import Footer from '../components/footer';
 import '../style/global.css';
@@ -13,7 +13,7 @@ function App({ Component, pageProps, children }) {
         {children}
         <Component {...pageProps} />
         <DarkModeButton />
-        <BackToTop />
+        <Test />
         <Footer />
       </ColorModeProvider>
     </ThemeProvider>
