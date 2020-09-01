@@ -1,4 +1,4 @@
-const { Icon, Button, Box } = require('@chakra-ui/core');
+import { Button, Icon } from '@chakra-ui/core';
 
 const BackToTop = () => {
   const scrollTop = () => {
