@@ -2,6 +2,7 @@ import { Box, Flex, Heading, Link as ChakraLink, Text } from '@chakra-ui/core';
 import Head from 'next/head';
 import Link from 'next/link';
 import PortfolioItem from '../components/portfolioItem';
+import { getSortedPostsData } from '../lib/posts';
 
 export default function Home({ allPostsData }) {
   return (
@@ -133,21 +134,21 @@ export default function Home({ allPostsData }) {
           <Text mt='20px'>More projects coming soon...</Text>
         </Box>
       </Box>
-      {/* {allPostsData.length > 0 && ( */}
-      <ul>
-        {allPostsData.map(({ id, date, title }) => (
-          <li key={id}>
-            <Link href='/posts/[id]' as={`/posts/${id}`}>
-              <a>{title}</a>
-            </Link>
-            <br />
-            <small>
-              <Date dateString={date} />
-            </small>
-          </li>
-        ))}
-      </ul>
-      {/* )} */}
+      {allPostsData.length > 0 && (
+        <ul>
+          {allPostsData.map(({ id, date, title }) => (
+            <li key={id}>
+              <Link href='/posts/[id]' as={`/posts/${id}`}>
+                <a>{title}</a>
+              </Link>
+              <br />
+              <small>
+                <Date dateString={date} />
+              </small>
+            </li>
+          ))}
+        </ul>
+      )}
     </>
   );
 }
