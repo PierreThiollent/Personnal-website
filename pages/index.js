@@ -1,8 +1,10 @@
-import { Box, Flex, Heading, Link, Text } from '@chakra-ui/core';
+import { Box, Flex, Heading, Link as ChakraLink, Text } from '@chakra-ui/core';
 import Head from 'next/head';
+import Link from 'next/link';
 import PortfolioItem from '../components/portfolioItem';
+import { getSortedPostsData } from '../lib/posts';
 
-export default function Home() {
+export default function Home({ allPostsData }) {
   return (
     <>
       <Head>
@@ -18,8 +20,9 @@ export default function Home() {
             💻 Web Developer, UX/UI enthusiast
           </Heading>
           <Box mt='25px'>
-            <Link
+            <ChakraLink
               href='https://github.com/PierreThiollent'
+              as={Link}
               isExternal
               fontSize='14px'
               color='#8B9CAC'
@@ -27,9 +30,10 @@ export default function Home() {
               mr='12px'
               _hover={{ textDecoration: 'none', color: 'tomato' }}
               _focus={{ outline: 'none' }}>
-              GitHub
-            </Link>
-            <Link
+              <a>GitHub</a>
+            </ChakraLink>
+            <ChakraLink
+              as={Link}
               href='https://twitter.com/Pierre_t76'
               isExternal
               fontSize='14px'
@@ -38,9 +42,10 @@ export default function Home() {
               mr='12px'
               _hover={{ textDecoration: 'none', color: 'tomato' }}
               _focus={{ outline: 'none' }}>
-              Twitter
-            </Link>
-            <Link
+              <a>Twitter</a>
+            </ChakraLink>
+            <ChakraLink
+              as={Link}
               href='https://www.linkedin.com/in/pierre-thiollent/'
               isExternal
               fontSize='14px'
@@ -49,9 +54,10 @@ export default function Home() {
               mr='12px'
               _hover={{ textDecoration: 'none', color: 'tomato' }}
               _focus={{ outline: 'none' }}>
-              Linkedin
-            </Link>
-            <Link
+              <a>Linkedin</a>
+            </ChakraLink>
+            <ChakraLink
+              as={Link}
               href='https://www.instagram.com/pierre_thiollent/'
               isExternal
               fontSize='14px'
@@ -59,8 +65,8 @@ export default function Home() {
               fontWeight='300'
               _hover={{ textDecoration: 'none', color: 'tomato' }}
               _focus={{ outline: 'none' }}>
-              Instagram
-            </Link>
+              <a>Instagram</a>
+            </ChakraLink>
           </Box>
           <Box mt='50px' maxW='700px'>
             <Text color='customGrey' fontWeight='300'>
@@ -132,6 +138,30 @@ export default function Home() {
           <Text mt='20px'>More projects coming soon...</Text>
         </Box>
       </Box>
+      {/* {allPostsData.length > 0 && ( */}
+      <ul>
+        {allPostsData.map(({ id, date, title }) => (
+          <li key={id}>
+            <Link href='/posts/[id]' as={`/posts/${id}`}>
+              <a>{title}</a>
+            </Link>
+            <br />
+            <small>
+              <Date dateString={date} />
+            </small>
+          </li>
+        ))}
+      </ul>
+      {/* )} */}
     </>
   );
+}
+
+export async function getStaticProps() {
+  const allPostsData = getSortedPostsData();
+  return {
+    props: {
+      allPostsData,
+    },
+  };
 }
