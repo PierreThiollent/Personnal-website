@@ -7,7 +7,7 @@ const BackToTop = () => {
 
   return (
     <Button
-      name='Back to top'
+      name='back_to_top'
       onClick={scrollTop}
       position='absolute'
       right='30px'
