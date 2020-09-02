@@ -2,7 +2,6 @@ import { Box, Flex, Heading, Link as ChakraLink, Text } from '@chakra-ui/core';
 import Head from 'next/head';
 import Link from 'next/link';
 import PortfolioItem from '../components/portfolioItem';
-import { getSortedPostsData } from '../lib/posts';
 
 export default function Home({ allPostsData }) {
   return (
@@ -22,7 +21,6 @@ export default function Home({ allPostsData }) {
           <Box mt='25px'>
             <ChakraLink
               href='https://github.com/PierreThiollent'
-              as={Link}
               isExternal
               fontSize='14px'
               color='#8B9CAC'
@@ -30,10 +28,9 @@ export default function Home({ allPostsData }) {
               mr='12px'
               _hover={{ textDecoration: 'none', color: 'tomato' }}
               _focus={{ outline: 'none' }}>
-              <a>GitHub</a>
+              GitHub
             </ChakraLink>
             <ChakraLink
-              as={Link}
               href='https://twitter.com/Pierre_t76'
               isExternal
               fontSize='14px'
@@ -42,10 +39,9 @@ export default function Home({ allPostsData }) {
               mr='12px'
               _hover={{ textDecoration: 'none', color: 'tomato' }}
               _focus={{ outline: 'none' }}>
-              <a>Twitter</a>
+              Twitter
             </ChakraLink>
             <ChakraLink
-              as={Link}
               href='https://www.linkedin.com/in/pierre-thiollent/'
               isExternal
               fontSize='14px'
@@ -54,10 +50,9 @@ export default function Home({ allPostsData }) {
               mr='12px'
               _hover={{ textDecoration: 'none', color: 'tomato' }}
               _focus={{ outline: 'none' }}>
-              <a>Linkedin</a>
+              Linkedin
             </ChakraLink>
             <ChakraLink
-              as={Link}
               href='https://www.instagram.com/pierre_thiollent/'
               isExternal
               fontSize='14px'
@@ -65,7 +60,7 @@ export default function Home({ allPostsData }) {
               fontWeight='300'
               _hover={{ textDecoration: 'none', color: 'tomato' }}
               _focus={{ outline: 'none' }}>
-              <a>Instagram</a>
+              Instagram
             </ChakraLink>
           </Box>
           <Box mt='50px' maxW='700px'>
