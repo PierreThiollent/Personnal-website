@@ -1,24 +1,28 @@
+import { Box } from '@chakra-ui/core';
 import Head from 'next/head';
 import Link from 'next/link';
 import Date from '../../components/date';
 import { getAllPostIds, getPostData } from '../../lib/posts';
 
 export default function Post({ postData }) {
+  console.log(postData);
   return (
     <>
       <Head>
         <title>{postData.title}</title>
       </Head>
-      <article>
-        <h1>{postData.title}</h1>
-        <div>
-          <Date dateString={postData.date} />
-        </div>
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-      </article>
-      <Link href='/'>
-        <a>← Back to home</a>
-      </Link>
+      <Box maxWidth='1260px' px='30px' mx='auto' w='100%'>
+        <article>
+          <h1>{postData.title}</h1>
+          <div>
+            <Date dateString={postData.date} />
+          </div>
+          <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        </article>
+        <Link href='/'>
+          <a>← Back to home</a>
+        </Link>
+      </Box>
     </>
   );
 }
