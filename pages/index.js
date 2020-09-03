@@ -72,7 +72,7 @@ export default function Home({ allPostsData }) {
           </Box>
         </Box>
       </Flex>
-      <Box mb='120px'>
+      <Box>
         <Box maxWidth='1260px' px='30px' mx='auto' w='100%'>
           <Box mb='50px'>
             <Heading as='h3' color='darkblue' fontSize='25px' fontWeight='700'>
@@ -135,19 +135,21 @@ export default function Home({ allPostsData }) {
         </Box>
       </Box>
       {allPostsData.length > 0 && (
-        <ul>
-          {allPostsData.map(({ id, date, title }) => (
-            <li key={id}>
-              <Link href='/posts/[id]' as={`/posts/${id}`}>
-                <a>{title}</a>
-              </Link>
-              <br />
-              <small>
-                <Date dateString={date} />
-              </small>
-            </li>
-          ))}
-        </ul>
+        <Box my='120px'>
+          <Box maxWidth='1260px' px='30px' mx='auto' w='100%'>
+            {allPostsData.map(({ id, date, title }) => (
+              <Box key={id}>
+                <Link href='/posts/[id]' as={`/posts/${id}`}>
+                  <a>{title}</a>
+                </Link>
+                <br />
+                <small>
+                  <Date dateString={date} />
+                </small>
+              </Box>
+            ))}
+          </Box>
+        </Box>
       )}
     </>
   );
