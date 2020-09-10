@@ -8,6 +8,7 @@ export default function Home() {
       <Head>
         <title>Pierre Thiollent - Web Developer</title>
         <link rel='icon' href='/favicon.ico' />
+        <meta name="google-site-verification" content="_Tg56-iiZIYfCkGM9nJOIs8j-lrOlCPKL0WmG-FRQVU" />
       </Head>
       <Flex justifyContent='center' flexDirection='column' height='80vh'>
         <Box maxWidth='1260px' px='30px' mx='auto' w='100%'>
