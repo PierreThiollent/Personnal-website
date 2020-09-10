@@ -2,7 +2,6 @@ import { Box, Flex, Heading, Link as ChakraLink, Text } from '@chakra-ui/core';
 import Head from 'next/head';
 import Link from 'next/link';
 import PortfolioItem from '../components/portfolioItem';
-import { getSortedPostsData } from '../lib/posts';
 
 export default function Home({ allPostsData }) {
   return (
@@ -10,6 +9,8 @@ export default function Home({ allPostsData }) {
       <Head>
         <title>Pierre Thiollent - Web Developer</title>
         <link rel='icon' href='/favicon.ico' />
+        <meta name='google-site-verification' content='_Tg56-iiZIYfCkGM9nJOIs8j-lrOlCPKL0WmG-FRQVU' />
+        <meta name='description' content='Pierre Thiollent, French Web Developer living in Rouen, France.' />
       </Head>
       <Flex justifyContent='center' flexDirection='column' height='80vh'>
         <Box maxWidth='1260px' px='30px' mx='auto' w='100%'>
@@ -137,7 +138,7 @@ export default function Home({ allPostsData }) {
       {allPostsData.length > 0 && (
         <Box my='120px'>
           <Box maxWidth='1260px' px='30px' mx='auto' w='100%'>
-            {allPostsData.map(({ id, date, title }) => (
+            {allPostsData.slice(0, 3).map(({ id, date, title }) => (
               <Box key={id}>
                 <Link href='/posts/[id]' as={`/posts/${id}`}>
                   <a>{title}</a>
