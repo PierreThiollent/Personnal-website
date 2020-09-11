@@ -1,7 +1,8 @@
-import { Box, Flex, Heading, Link as ChakraLink, Text } from '@chakra-ui/core';
+import { Box, Flex, Heading, Link as ChakraLink, Stack, Tag, Text } from '@chakra-ui/core';
 import Head from 'next/head';
 import Link from 'next/link';
 import PortfolioItem from '../components/portfolioItem';
+import { getSortedPostsData } from '../lib/posts';
 
 export default function Home({ allPostsData }) {
   return (
@@ -14,7 +15,7 @@ export default function Home({ allPostsData }) {
       </Head>
       <Flex justifyContent='center' flexDirection='column' height='80vh'>
         <Box maxWidth='1260px' px='30px' mx='auto' w='100%'>
-          <Heading as='h1' fontWeight='700' fontSize='28px' color='darkblue'>
+          <Heading as='h1' fontWeight='700' fontSize='28px' color='darkGrey'>
             Pierre Thiollent
           </Heading>
           <Heading as='h2' fontSize='16px' fontWeight='300' color='customGrey' lineHeight='1.8'>
@@ -25,7 +26,7 @@ export default function Home({ allPostsData }) {
               href='https://github.com/PierreThiollent'
               isExternal
               fontSize='14px'
-              color='#8B9CAC'
+              color='lightSlateGrey'
               fontWeight='300'
               mr='12px'
               _hover={{ textDecoration: 'none', color: 'tomato' }}
@@ -36,7 +37,7 @@ export default function Home({ allPostsData }) {
               href='https://twitter.com/Pierre_t76'
               isExternal
               fontSize='14px'
-              color='#8B9CAC'
+              color='lightSlateGrey'
               fontWeight='300'
               mr='12px'
               _hover={{ textDecoration: 'none', color: 'tomato' }}
@@ -47,7 +48,7 @@ export default function Home({ allPostsData }) {
               href='https://www.linkedin.com/in/pierre-thiollent/'
               isExternal
               fontSize='14px'
-              color='#8B9CAC'
+              color='lightSlateGrey'
               fontWeight='300'
               mr='12px'
               _hover={{ textDecoration: 'none', color: 'tomato' }}
@@ -58,7 +59,7 @@ export default function Home({ allPostsData }) {
               href='https://www.instagram.com/pierre_thiollent/'
               isExternal
               fontSize='14px'
-              color='#8B9CAC'
+              color='lightSlateGrey'
               fontWeight='300'
               _hover={{ textDecoration: 'none', color: 'tomato' }}
               _focus={{ outline: 'none' }}>
@@ -76,7 +77,7 @@ export default function Home({ allPostsData }) {
       <Box>
         <Box maxWidth='1260px' px='30px' mx='auto' w='100%'>
           <Box mb='50px'>
-            <Heading as='h3' color='darkblue' fontSize='25px' fontWeight='700'>
+            <Heading as='h3' color='darkGrey' fontSize='25px' fontWeight='700'>
               Portfolio
             </Heading>
             <Text color='customGrey' fontWeight='300' lineHeight='1.8'>
@@ -138,17 +139,42 @@ export default function Home({ allPostsData }) {
       {allPostsData.length > 0 && (
         <Box my='120px'>
           <Box maxWidth='1260px' px='30px' mx='auto' w='100%'>
-            {allPostsData.slice(0, 3).map(({ id, date, title }) => (
-              <Box key={id}>
-                <Link href='/posts/[id]' as={`/posts/${id}`}>
-                  <a>{title}</a>
-                </Link>
-                <br />
-                <small>
-                  <Date dateString={date} />
-                </small>
-              </Box>
-            ))}
+            <Box mb='50px'>
+              <Heading as='h3' color='darkGrey' fontSize='25px' fontWeight='700'>
+                Posts
+              </Heading>
+              <Text color='customGrey' fontWeight='300' lineHeight='1.8'>
+                My latest blog posts
+              </Text>
+            </Box>
+            <Flex justifyContent='space-between' alignItems='baseline' flexWrap='wrap'>
+              {allPostsData.slice(0, 3).map(({ id, date, title, categories }) => (
+                <Flex key={id} flexDirection='column' flex='0 1 370px'>
+                  <Link href='/posts/[id]' as={`/posts/${id}`}>
+                    <a style={{ fontSize: '18px', color: '#27303F' }}>{title}</a>
+                  </Link>
+                  <br />
+                  <small>
+                    <Date dateString={date} />
+                  </small>
+                  <Stack mt='10px' spacing={2} isInline>
+                    {categories &&
+                      categories.map((category, index) => (
+                        <Tag
+                          color='lightSlateGrey'
+                          size='sm'
+                          backgroundColor='#f7fafc'
+                          fontWeight='300'
+                          fontSize='12px'
+                          verticalAlign='middle'
+                          key={index}>
+                          {category}
+                        </Tag>
+                      ))}
+                  </Stack>
+                </Flex>
+              ))}
+            </Flex>
           </Box>
         </Box>
       )}

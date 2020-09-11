@@ -26,8 +26,14 @@ const customTheme = {
   },
   colors: {
     ...theme.colors,
-    darkblue: '#273140',
-    customGrey: '#626D83',
+    darkGrey: '#27303F',
+    customGrey: '#606B80',
+    lightSlateGrey: '#7C8FA2',
+
+    // #27303F
+    // #CBD5E0
+    // #F2F4F7
+    // #FFFFFF
   },
 };
 

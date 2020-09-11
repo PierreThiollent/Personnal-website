@@ -14,7 +14,7 @@ const BackToTop = () => {
       bottom={['70px', '30px']}
       bg='#f7fafc'
       _hover={{ backgroundColor: '#edf2f8' }}>
-      <Icon name='arrow-up' size='18px' color='#8B9CAC' />
+      <Icon name='arrow-up' size='18px' color='lightSlateGrey' />
     </Button>
   );
 };

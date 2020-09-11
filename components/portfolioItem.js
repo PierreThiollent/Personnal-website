@@ -5,7 +5,7 @@ const PortfolioItem = ({ image, projectName, projectDescription, link, tags, git
     <Link _hover={{ textDecoration: 'none' }} href={`${link}`} isExternal>
       <Image src={`/${image}`} borderRadius='5px' maxHeight='370px' alt={`${projectName}`} />
       <Box mt='20px'>
-        <Text fontSize='18px' color='darkblue'>
+        <Text fontSize='18px' color='darkGrey'>
           {projectName}
         </Text>
         <Text color='customGrey' fontWeight='300' fontSize='14px'>
@@ -16,13 +16,13 @@ const PortfolioItem = ({ image, projectName, projectDescription, link, tags, git
     <Stack mt='10px' spacing={2} isInline>
       {tags &&
         tags.map((tag, index) => (
-          <Tag color='#8B9CAC' size='sm' backgroundColor='#f7fafc' fontWeight='300' fontSize='12px' verticalAlign='middle' key={index}>
+          <Tag color='lightSlateGrey' size='sm' backgroundColor='#f7fafc' fontWeight='300' fontSize='12px' verticalAlign='middle' key={index}>
             {tag}
           </Tag>
         ))}
       {gitUrl && (
         <Link href={`${gitUrl}`} isExternal w='max-content' ml='auto' marginRight='10px'>
-          <Icon name='github' size='15px' color='darkblue' />
+          <Icon name='github' size='15px' color='darkGrey' />
         </Link>
       )}
     </Stack>
