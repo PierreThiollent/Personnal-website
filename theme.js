@@ -26,10 +26,21 @@ const customTheme = {
   },
   colors: {
     ...theme.colors,
-    darkGrey: '#27303F',
-    customGrey: '#606B80',
-    lightSlateGrey: '#7C8FA2',
 
+    light: {
+      background: 'white',
+      mainTitle: '#27303F',
+      title: '#606B80',
+      lightSlateGrey: '#7C8FA2',
+      socialLinks: '#7C8FA2',
+    },
+    dark: {
+      background: '#27303F',
+      mainTitle: '#FAFAFA',
+      title: '#F6F6F6',
+      lightSlateGrey: '#7C8FA2',
+      socialLinks: 'tomato',
+    },
     // #27303F
     // #CBD5E0
     // #F2F4F7
