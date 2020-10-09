@@ -8,11 +8,9 @@
     "start": "next start"
   },
   "dependencies": {
-    "@chakra-ui/core": "^0.8.0",
-    "@emotion/core": "^10.0.35",
-    "@emotion/styled": "^10.0.27",
+    "@chakra-ui/core": "^1.0.0-rc.5",
+    "@chakra-ui/icons": "^1.0.0-rc.5",
     "date-fns": "^2.14.0",
-    "emotion-theming": "^10.0.27",
     "gray-matter": "^4.0.2",
     "lottie-react-web": "^2.2.2",
     "next": "9.5.2",
