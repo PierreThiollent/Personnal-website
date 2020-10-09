@@ -8,7 +8,7 @@ import animationDark from '../public/lottie-animation-dark.json';
 import animation from '../public/lottie-animation.json';
 
 export default function Home({ projects }) {
-  const { colorMode } = useColorMode();
+  const { colorMode } = useColorMode(null);
 
   return (
     <>
