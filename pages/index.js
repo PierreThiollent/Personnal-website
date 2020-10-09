@@ -8,7 +8,7 @@ import animationDark from '../public/lottie-animation-dark.json';
 import animation from '../public/lottie-animation.json';
 
 export default function Home({ projects }) {
-  const { colorMode } = useColorMode(null);
+  const { colorMode } = useColorMode();
 
   return (
     <>
@@ -81,25 +81,14 @@ export default function Home({ projects }) {
               </Box>
             </Box>
             <Box display={{ xs: 'none', sm: 'none', md: 'none', lg: 'block', xl: 'block' }}>
-              {colorMode === 'light' ? (
-                <Lottie
-                  options={{
-                    animationData: animation,
-                  }}
-                  width={150}
-                  height={150}
-                  style={{ margin: 0 }}
-                />
-              ) : (
-                <Lottie
-                  options={{
-                    animationData: animationDark,
-                  }}
-                  width={150}
-                  height={150}
-                  style={{ margin: 0 }}
-                />
-              )}
+              <Lottie
+                options={{
+                  animationData: colorMode === 'light' ? animation : animationDark,
+                }}
+                width={150}
+                height={150}
+                style={{ margin: 0 }}
+              />
             </Box>
           </Flex>
         </Flex>
