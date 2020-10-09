@@ -1,22 +1,18 @@
-import { ColorModeProvider, CSSReset, ThemeProvider } from '@chakra-ui/core';
+import { ChakraProvider } from '@chakra-ui/core';
 import BackToTop from '../components/backToTop';
 import DarkModeButton from '../components/darkModeButton';
 import Footer from '../components/footer';
 import '../style/global.css';
 import customTheme from '../theme';
 
-function App({ Component, pageProps, children }) {
+function App({ Component, pageProps }) {
   return (
-    <ThemeProvider theme={customTheme}>
-      <CSSReset />
-      <ColorModeProvider>
-        {children}
-        <Component {...pageProps} />
-        <DarkModeButton />
-        <BackToTop />
-        <Footer />
-      </ColorModeProvider>
-    </ThemeProvider>
+    <ChakraProvider theme={customTheme}>
+      <Component {...pageProps} />
+      <DarkModeButton />
+      <BackToTop />
+      <Footer />
+    </ChakraProvider>
   );
 }
 
