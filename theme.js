@@ -30,8 +30,6 @@ const customTheme = extendTheme({
   },
 });
 
-const customTheme = extendTheme({ theme });
-
 export default customTheme;
 
 export const GithubIcon = createIcon({
