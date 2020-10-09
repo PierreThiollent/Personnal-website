@@ -2,7 +2,6 @@ import { Box, Flex, Heading, Link as ChakraLink, Text, useColorMode } from '@cha
 import Lottie from 'lottie-react-web';
 import Head from 'next/head';
 import PortfolioItem from '../components/portfolioItem';
-import { config } from '../config';
 import { getSortedProjects } from '../lib/projects';
 import animationDark from '../public/lottie-animation-dark.json';
 import animation from '../public/lottie-animation.json';
@@ -105,7 +104,7 @@ export default function Home({ projects }) {
             <Flex justifyContent={['center', 'space-around', 'space-around', 'space-around', 'space-between']} alignItems='baseline' flexWrap='wrap'>
               {projects.map((project, index) => (
                 <PortfolioItem
-                  image={`${config.API_URL}${project.image.url}`}
+                  image={`/${project.image.name}`}
                   projectName={project.name}
                   projectDescription={project.description}
                   link={project.url}
