@@ -1,5 +1,6 @@
 // * https://github.com/vercel/next.js/tree/canary/examples/with-chakra-ui
-import { theme } from '@chakra-ui/core';
+
+import { extendTheme } from '@chakra-ui/core';
 
 const customIcons = {
   github: {
@@ -13,10 +14,8 @@ const customIcons = {
   },
 };
 
-const customTheme = {
-  ...theme,
+const theme = {
   icons: {
-    ...theme.icons,
     ...customIcons,
   },
   fonts: {
@@ -25,8 +24,6 @@ const customTheme = {
     mono: 'Ubuntu, sans-serif',
   },
   colors: {
-    ...theme.colors,
-
     light: {
       background: 'white',
       mainTitle: '#27303F',
@@ -41,11 +38,13 @@ const customTheme = {
       lightSlateGrey: '#7C8FA2',
       socialLinks: 'tomato',
     },
-    // #27303F
-    // #CBD5E0
-    // #F2F4F7
-    // #FFFFFF
+  },
+  config: {
+    useSystemColorMode: false,
+    initialColorMode: 'light',
   },
 };
+
+const customTheme = extendTheme({ theme });
 
 export default customTheme;
