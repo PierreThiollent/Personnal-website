@@ -1,19 +1,22 @@
 import { Button, Icon, useColorMode } from '@chakra-ui/core';
 
 const DarkModeButton = () => {
-  const { colorMode, toggleColorMode } = useColorMode();
+  const { colorMode, toggleColorMode } = useColorMode('light');
   return (
     <Button
       name='toggle_dark_mode'
       position='absolute'
-      disabled
       top='30px'
       right='30px'
       onClick={toggleColorMode}
       _hover={{ backgroundColor: 'transparent' }}
       _active={{ backgroundColor: 'transparent' }}
       bg='transparent'>
-      {colorMode === 'light' ? <Icon name='sun' size='24px' color='darkGrey' /> : <Icon name='moon' size='24px' color='darkGrey' />}
+      {colorMode === 'light' ? (
+        <Icon name='moon' size='24px' color={`${colorMode}.mainTitle`} />
+      ) : (
+        <Icon name='sun' size='24px' color={`${colorMode}.mainTitle`} />
+      )}
     </Button>
   );
 };
