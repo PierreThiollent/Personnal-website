@@ -12,7 +12,7 @@ const BackToTop = () => {
       onClick={scrollTop}
       position='absolute'
       right='30px'
-      bottom={['70px', '30px']}
+      bottom={['120px', '30px']}
       bg='#f7fafc'
       _hover={{ backgroundColor: '#edf2f8' }}>
       <ArrowUpIcon size='18px' color='lightSlateGrey' />
