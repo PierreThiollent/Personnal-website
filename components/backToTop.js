@@ -1,4 +1,5 @@
-import { Button, Icon } from '@chakra-ui/core';
+import { Button } from '@chakra-ui/core';
+import { ArrowUpIcon } from '@chakra-ui/icons';
 
 const BackToTop = () => {
   const scrollTop = () => {
@@ -14,7 +15,7 @@ const BackToTop = () => {
       bottom={['70px', '30px']}
       bg='#f7fafc'
       _hover={{ backgroundColor: '#edf2f8' }}>
-      <Icon name='arrow-up' size='18px' color='lightSlateGrey' />
+      <ArrowUpIcon size='18px' color='lightSlateGrey' />
     </Button>
   );
 };

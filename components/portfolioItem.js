@@ -1,4 +1,5 @@
-import { Box, Flex, Icon, Image, Link, Stack, Tag, Text, useColorMode } from '@chakra-ui/core';
+import { Box, Flex, Image, Link, Stack, Tag, Text, useColorMode } from '@chakra-ui/core';
+import { GithubIcon } from '../theme';
 
 const PortfolioItem = ({ image, projectName, projectDescription, link, tags, gitUrl }) => {
   const { colorMode } = useColorMode();
@@ -31,8 +32,8 @@ const PortfolioItem = ({ image, projectName, projectDescription, link, tags, git
             </Tag>
           ))}
         {gitUrl && (
-          <Link href={`${gitUrl}`} isExternal w='max-content' ml='auto' marginRight='10px'>
-            <Icon name='github' size='15px' color={`${colorMode}.mainTitle`} />
+          <Link href={`${gitUrl}`} isExternal marginLeft='auto !important' marginRight='10px'>
+            <GithubIcon boxSize='15px' color={`${colorMode}.mainTitle`} />
           </Link>
         )}
       </Stack>

@@ -13,7 +13,11 @@ const DarkModeButton = () => {
       _hover={{ backgroundColor: 'transparent' }}
       _active={{ backgroundColor: 'transparent' }}
       bg='transparent'>
-      {colorMode === 'light' ? <MoonIcon size='24px' color={`${colorMode}.mainTitle`} /> : <SunIcon size='24px' color={`${colorMode}.mainTitle`} />}
+      {colorMode === 'light' ? (
+        <MoonIcon boxSize='20px' color={`${colorMode}.mainTitle`} />
+      ) : (
+        <SunIcon boxSize='20px' color={`${colorMode}.mainTitle`} />
+      )}
     </Button>
   );
 };
