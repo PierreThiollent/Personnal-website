@@ -80,7 +80,7 @@ export default function Home({ projects }) {
                 </Text>
               </Box>
             </Box>
-            <Box display={{ xs: 'none', sm: 'none', md: 'none', lg: 'block', xl: 'block' }}>
+            <Box display={{ base: 'none', sm: 'none', md: 'none', lg: 'block', xl: 'block' }}>
               <Lottie
                 options={{
                   animationData: colorMode === 'light' ? animation : animationDark,
