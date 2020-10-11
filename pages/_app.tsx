@@ -4,8 +4,9 @@ import DarkModeButton from '../components/darkModeButton';
 import Footer from '../components/footer';
 import '../style/global.css';
 import customTheme from '../theme';
+import type { AppProps } from 'next/app';
 
-function App({ Component, pageProps }) {
+function App({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={customTheme}>
       <Component {...pageProps} />
