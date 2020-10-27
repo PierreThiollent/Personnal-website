@@ -1,12 +1,12 @@
 import { Box, Flex, Heading, Link as ChakraLink, Text, useColorMode } from '@chakra-ui/core';
+import PortfolioItem from '@components/portfolioItem';
+import { Project } from '@interfaces/Project';
+import { getSortedProjects } from '@lib/projects';
+import animationDark from '@public/lottie-animation-dark.json';
+import animation from '@public/lottie-animation.json';
 import Lottie from 'lottie-react-web';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
-import PortfolioItem from '../components/portfolioItem';
-import { Project } from '../interfaces/Project';
-import { getSortedProjects } from '../lib/projects';
-import animationDark from '../public/lottie-animation-dark.json';
-import animation from '../public/lottie-animation.json';
 
 interface ProjectProps {
   projects: Project[];
@@ -97,7 +97,7 @@ export default function Home({ projects }: ProjectProps) {
             </Box>
           </Flex>
         </Flex>
-        <Box>
+        <Box as='section'>
           <Box maxWidth='1280px' px='50px' mx='auto' w='100%'>
             <Box mb='50px'>
               <Heading as='h3' color={`${colorMode}.mainTitle`} fontSize='25px' fontWeight='700'>
@@ -108,7 +108,7 @@ export default function Home({ projects }: ProjectProps) {
               </Text>
             </Box>
             <Flex justifyContent={['center', 'space-around', 'space-around', 'space-around', 'space-between']} alignItems='baseline' flexWrap='wrap'>
-              {projects?.map((project, index) => (
+              {projects?.map((project: Project, index: number) => (
                 <PortfolioItem
                   image={`/${project.image.name}`}
                   projectName={project.name}
