@@ -1,6 +1,6 @@
 import { Box, Flex, Image, Link, Stack, Tag as ChakraTag, Text, useColorMode } from '@chakra-ui/core';
-import { Tag } from '../interfaces/Tag';
-import { GithubIcon } from '../theme';
+import { Tag } from '@interfaces/Tag';
+import { GithubIcon } from 'theme';
 
 interface PortfolioItemProps {
   image: string;

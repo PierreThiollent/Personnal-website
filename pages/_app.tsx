@@ -1,10 +1,10 @@
 import { ChakraProvider } from '@chakra-ui/core';
-import BackToTop from '../components/backToTop';
-import DarkModeButton from '../components/darkModeButton';
-import Footer from '../components/footer';
-import '../style/global.css';
-import customTheme from '../theme';
+import BackToTop from '@components/backToTop';
+import DarkModeButton from '@components/darkModeButton';
+import Footer from '@components/footer';
+import '@style/global.css';
 import type { AppProps } from 'next/app';
+import customTheme from 'theme';
 
 function App({ Component, pageProps }: AppProps) {
   return (
