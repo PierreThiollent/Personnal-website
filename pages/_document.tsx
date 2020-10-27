@@ -1,13 +1,14 @@
 import { ColorModeScript } from '@chakra-ui/core';
-import Document, { Head, Html, Main, NextScript } from 'next/document';
+import Document, { DocumentContext, Head, Html, Main, NextScript } from 'next/document';
 
 class MyDocument extends Document {
-  static getInitialProps(ctx) {
+  static getInitialProps(ctx: DocumentContext) {
     return Document.getInitialProps(ctx);
   }
+
   render() {
     return (
-      <Html lang='fr'>
+      <Html lang='en'>
         <Head />
         <body>
           <ColorModeScript initialColorMode='light' />
