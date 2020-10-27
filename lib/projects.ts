@@ -1,14 +1,18 @@
+import { Project } from '@interfaces/Project';
+import { config } from 'config';
 import fs from 'fs';
-import { config } from '../config';
-import { Project } from '../interfaces/Project';
 
-export async function getSortedProjects() {
+export async function getSortedProjects(): Promise<Project[]> {
   const projectsResponse = await fetch(`${config.API_URL}/projects`);
   const projects = await projectsResponse.json();
 
+  // Pour chaque projet récupéré
   projects.forEach(async (project: Project) => {
+    // On fetch l'image
     const image = await fetch(`${config.API_URL}${project.image.url}`);
+    // On recupère le json
     const jsonImage = await image.json();
+    // On recupère le buffer
     const buffer = await jsonImage.buffer();
 
     try {
@@ -17,13 +21,14 @@ export async function getSortedProjects() {
         console.log('File already exist');
       } else {
         // Sinon on la sauvegarde
-        fs.writeFile(`./public/${project.image.name}`, buffer, () => console.log('finished downloading!'));
+        fs.writeFile(`./public/${project.image.name}`, buffer, () => console.log('Image downloaded !'));
       }
     } catch (err) {
       console.error(err);
     }
   });
 
+  // On trie les projets par date de création
   return projects.sort((a: Project, b: Project) => {
     if (a.createdAt < b.createdAt) {
       return 1;
