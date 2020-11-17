@@ -20,7 +20,6 @@ export default function Home({ projects }: ProjectProps) {
       <Head>
         <title>Pierre Thiollent - Web Developer</title>
         <link rel='icon' href='/favicon.ico' />
-        <meta name='google-site-verification' content='_Tg56-iiZIYfCkGM9nJOIs8j-lrOlCPKL0WmG-FRQVU' />
         <meta name='description' content='Pierre Thiollent, French Web Developer living in Rouen, France.' />
         <meta name='robots' content='index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1' />
       </Head>
