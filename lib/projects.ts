@@ -17,11 +17,11 @@ export async function getSortedProjects(): Promise<Project[]> {
 
     try {
       // On vérifie si l'image existe deja
-      if (fs.existsSync(`./public/${project.image.name}`)) {
+      if (fs.existsSync(`./${project.image.name}`)) {
         console.log('File already exist');
       } else {
         // Sinon on la sauvegarde
-        fs.writeFile(`./public/${project.image.name}`, buffer, () => console.log('Image downloaded !'));
+        fs.writeFile(`./${project.image.name}`, buffer, () => console.log('Image downloaded !'));
       }
     } catch (err) {
       console.error(err);
